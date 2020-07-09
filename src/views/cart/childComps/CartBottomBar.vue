@@ -1,7 +1,11 @@
 <template>
   <div class="cart-bottom-bar">
     <div class="check-content">
-      <check-button class="check-button"/>
+      <check-button 
+        class="check-button" 
+        :is-checked="isSelectAll"
+        @click.native="checkSelectAll"
+      />
       <span>全选</span>
     </div>
     <div class="total-price">
@@ -32,8 +36,23 @@
           return preValue + item.realPrice * item.count
         }, 0).toFixed(2)
       },
+      // 购物车中选中的物品个数
       cartListLength() {
-        return this.cartLength
+        return this.cartList.filter(item => item.checked).length
+      },
+      isSelectAll() {
+        return this.cartLength > 0 && !this.cartList.find(item => !item.checked) 
+        // return this.cartListLength === this.cartLength
+      }
+    },
+    methods: {
+      checkSelectAll() {
+        // console.log(this.cartList);
+        if (this.isSelectAll) {
+          this.cartList.forEach(item => item.checked = false)
+        } else {
+          this.cartList.forEach(item => item.checked = true)
+        }
       }
     }
   }
