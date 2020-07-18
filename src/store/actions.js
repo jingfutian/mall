@@ -10,7 +10,7 @@ export default {
 
       if (oldProduct) {
         context.commit(ADD_COUNT, oldProduct)
-        resolve('商品添加数量+1')
+        resolve('商品数量+1')
       } else {
         payload.count = 1
         context.commit(ADD_PRODUCT, payload)

@@ -1,22 +1,23 @@
 <template>
-  <swiper class="detail-swiper">
-    <swiper-item
+  <swiper class="swiper" :options="swiperOptions">
+    <swiper-slide
       v-for="(item, index) in topImages"
       :key="index"
     >
       <img :src="item" alt="">
-    </swiper-item>
+    </swiper-slide>
+    <div class="swiper-pagination" slot="pagination"></div>
   </swiper>
 </template>
 
 <script>
-  import { Swiper, SwiperItem } from "components/common/swiper";
+  import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
 
   export default {
     name: 'DetailSwiper',
     components: {
       Swiper,
-      SwiperItem
+      SwiperSlide
     },
     props: {
       topImages: {
@@ -26,7 +27,13 @@
     },
     data () {
       return {
-        
+        swiperOptions: {
+          autoplay: true,
+          pagination: {
+            el: ".swiper-pagination"
+          },
+          loop: true
+        }
       }
     }
   }
@@ -36,5 +43,18 @@
   .detail-swiper {
     height: 300px;
     overflow: hidden;
+  }
+
+  .swiper-container {
+    --swiper-pagination-color: red;
+  }
+
+  .swiper-container .swiper-slide{
+    height: 300px;
+    overflow: hidden;
+  }
+
+  .swiper-container img {
+    width: 100vw;
   }
 </style>

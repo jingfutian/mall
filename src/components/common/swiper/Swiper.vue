@@ -54,11 +54,13 @@
       }
     },
     mounted() {
-      setTimeout(() => {
-        this.handleDom();
+      this.handleDom();
+      this.startTimer();
+      // setTimeout(() => {
+      //   this.handleDom();
 
-        this.startTimer();
-      }, 3000);
+      //   this.startTimer();
+      // }, 3000);
     },
     methods: {
       /**

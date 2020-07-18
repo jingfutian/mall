@@ -35,7 +35,7 @@
   transform: translate(-50%, -50%);
   padding: 8px 10px;
   border-radius: 2px;
-  font-size: 20px;
+  font-size: 16px;
   color: #fff;
   background: rgba(0, 0, 0, .75);
   z-index: 1000;

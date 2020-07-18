@@ -5,14 +5,18 @@ import store from './store'
 
 import FastClick from 'fastclick'
 import VueLazyLoad from 'vue-lazyload'
+// import VueAwesomeSwiper from 'vue-awesome-swiper'
 
 import toast from 'components/common/toast'
+
+import 'swiper/css/swiper.css'
 
 Vue.config.productionTip = false
 
 Vue.prototype.$bus = new Vue()
 
 Vue.use(toast)
+// Vue.use(VueAwesomeSwiper)
 // Vue.use(VueLazyLoad)
 Vue.use(VueLazyLoad, {
   preload: 1.3,
