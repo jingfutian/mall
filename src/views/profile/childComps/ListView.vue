@@ -6,9 +6,7 @@
       :key="index"
     >
       <span class="icon">
-        <svg :fill="item.iconColor">
-          <use :xlink:href="item.icon"></use>
-        </svg>
+        <svg :fill="item.iconColor"><use :xlink:href="item.icon"></use></svg>
       </span>
       <div class="info">{{ item.info }}</div>
     </div>

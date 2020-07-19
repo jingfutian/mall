@@ -4,11 +4,11 @@
       <div slot="nav-center">购物商城</div>
     </nav-bar>
     <tab-control
-        v-show="isTabFixed"
-        :titles="['流行', '新款', '精选']"
-        @tabClick="tabClick"
-        ref="tabControl1"
-      />
+      v-show="isTabFixed"
+      :titles="['流行', '新款', '精选']"
+      @tabClick="tabClick"
+      ref="tabControl1"
+    />
 
     <scroll
       class="content"
@@ -125,15 +125,15 @@
        */
       getMultiData() {
         getHomeMultiData().then(res => {
-          this.banners = res.data.data.banner.list;
-          this.recommends = res.data.data.recommend.list;
+          this.banners = res.data.banner.list;
+          this.recommends = res.data.recommend.list;
         })
       },
       getGoods(type) {
         const page = this.goods[type].page + 1;
 
         getHomeGoods(type, page).then(res => {
-          this.goods[type].list.push(...res.data.data.list);
+          this.goods[type].list.push(...res.data.list);
           this.goods[type].page++;
 
           this.$refs.scroll.finishPullUp();
@@ -161,6 +161,7 @@
     bottom: 49px;
     left: 0;
     right: 0;
+    width: 100vw;
     overflow: hidden;
   }
 </style>

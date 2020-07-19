@@ -97,10 +97,10 @@
 
         // 请求商品信息
         getDetail(this.iid).then(res => {
-          const data = res.data.result
+          const data = res.result
 
           // 商品详情页轮播图片
-          this.topImages = res.data.result.itemInfo.topImages
+          this.topImages = res.result.itemInfo.topImages
           // 详情页商品信息
           this.goods = new Goods(data.columns, data.itemInfo, data.shopInfo.services)
           // 详情页店铺信息
@@ -121,7 +121,7 @@
             return
           }
 
-          this.recommendList = res.data.data.list
+          this.recommendList = res.data.list
         }) 
       },
       _listenScrollTheme(position) {
@@ -190,6 +190,8 @@
     position: relative;
     z-index: 10;
     background: #fff;
+    font-weight: normal;
+    color: #222;
   }
 
   .content {

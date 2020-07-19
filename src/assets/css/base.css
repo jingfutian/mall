@@ -65,3 +65,6 @@ a {
   float: right;
 }
 
+ul {
+  list-style: none;
+}

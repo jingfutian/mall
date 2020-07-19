@@ -20,7 +20,7 @@
     },
     computed: {
       imgSrc() {
-        return this.goodsItem.image || this.goodsItem.show.img
+        return this.goodsItem.image || this.goodsItem.img || this.goodsItem.show.img
       }
     },
     methods: {
@@ -40,12 +40,13 @@
 
 <style  scoped>
   .goods-item {
+    width: 100%;
     margin-bottom: 5px;
     text-align: center;
   }
+
   .goods-item img {
     width: 100%;
-    height: 265px;
     border-radius: 5px;
   }
 

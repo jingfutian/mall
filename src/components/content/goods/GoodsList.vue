@@ -11,8 +11,6 @@
 <script>
   import GoodsItem from 'components/content/goods/GoodsItem'
 
-  import BScroll from "better-scroll";
-
   export default {
     name: 'GoodsList',
     components: {
@@ -28,9 +26,6 @@
       return {
         scroll: null
       }
-    },
-    mounted() {
-      // this.scroll = new BScroll('.goods')
     }
   }
 </script>
